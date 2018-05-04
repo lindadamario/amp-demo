@@ -1,0 +1,526 @@
+<!doctype html>
+<html ⚡>
+<head>
+  <meta charset="utf-8">
+  <title>Product Page</title>
+  <meta name="amp-experiment-token" content="HfmyLgNLmblRg3Alqy164Vywr">
+  <link rel="stylesheet" type="text/css" href="index.css">
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+  <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+  <script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
+  <script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+  <script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.1.js"></script>
+  <script async custom-element="amp-social-share" src="https://cdn.ampproject.org/v0/amp-social-share-0.1.js"></script>
+  <script async custom-element="amp-lightbox" src="https://cdn.ampproject.org/v0/amp-lightbox-0.1.js"></script>
+  <script async custom-element="amp-image-lightbox" src="https://cdn.ampproject.org/v0/amp-image-lightbox-0.1.js"></script>
+  <script async custom-element="amp-youtube" src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"></script>
+  <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
+  <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
+  <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+  <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
+  <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+  <link rel="canonical" href="https://ampbyexample.com/samples_templates/product_page/">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <style amp-custom>
+    
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org/",
+    "@type": "Product",
+    "name": "Apple",
+    "image": "dior.jpg",
+    "description": "Lorem ipsum",
+    "mpn": "925872",
+    "brand": {
+      "@type": "Fruit",
+      "name": "Apple"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.4",
+      "reviewCount": "88"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "1.99",
+      "priceValidUntil": "2020-11-05",
+      "itemCondition": "http://schema.org/UsedCondition",
+      "availability": "http://schema.org/InStock",
+      "seller": {
+        "@type": "Retail",
+        "name": "AMP by Example"
+      }
+    }
+  }
+  </script>
+  
+  
+</head>
+<body>
+  <amp-sidebar id="drawermenu" layout="nodisplay">
+    <h2>Menu</h2>
+    <a href="/" class="caps text-decoration-none block p1">Products</a>
+    <br/>
+    <a 
+      class="caps text-decoration-none block p1" 
+      href="/samples_templates/product_browse_page/preview/">Phones
+    </a>
+    <br />
+    <a 
+      class="caps text-decoration-none block p1" 
+      href="/samples_templates/product_browse_page/preview/">Subscriptions
+    </a>
+  </amp-sidebar>
+
+  <div class="header">
+    <a id="sample-menu" on="tap:drawermenu.toggle">
+      <amp-img 
+        img src="dna-logo.jpg" 1x, src="dior.jpg" 2x, 
+        width="30" 
+        height="24" 
+        alt="navigation">
+      </amp-img>
+    </a>
+    <form 
+      method="GET" 
+      action="/samples_templates/product_browse_page/source/search" 
+      target="_top">
+      <input 
+        name="search" 
+        type="search" 
+        placeholder="Search">
+      <a id="sample-logo" href="/">Product</a>
+      <input type="submit" value="">
+    </form>
+  </div>
+  <div class="title">
+    <h2 class="m1 title">iPhone X</h2>
+  </div>
+<!-- End video AMP -->
+
+<!-- Start carousel and product information -->
+  <div class="section-2">
+    <div class="product-gallery">
+      <ul [hidden]="product.selectedColor != 'green'">
+        <li>
+          <amp-img 
+            on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})" 
+            [src]="product[product.selectedColor].details.img"
+            width="60" 
+            height="40"
+            class="selected" 
+            [class]="product.selectedSlideForGreen == 0 ? 'selected' : '' " 
+            tabindex="0" 
+            role="button">
+          </amp-img>
+        </li>
+        <li>
+          <amp-img 
+            on="tap:AMP.setState({product: {selectedSlideForGreen: 1}})" 
+            [src]="product[product.selectedColor].details.img"
+            width="60" 
+            height="40"
+            [class]="product.selectedSlideForGreen == 1 ? 'selected' : '' " 
+            tabindex="1" 
+            role="button">
+          </amp-img>
+        </li>
+        <li>
+          <amp-img 
+            on="tap:AMP.setState({product: {selectedSlideForGreen: 0}})" 
+            [src]="product[product.selectedColor].details.img"
+            width="60" 
+            height="40" 
+            class="selected"
+            [class]="product.selectedSlideForGreen == 0 ? 'selected' : '' " 
+            tabindex="0" 
+            role="button">
+          </amp-img>
+        </li>
+        <li>
+          <amp-img 
+            on="tap:AMP.setState({product: {selectedSlideForGreen: 1}})" 
+            [src]="product[product.selectedColor].details.img"
+            width="60" 
+            height="40" 
+            [class]="product.selectedSlideForGreen == 1 ? 'selected' : '' "
+            tabindex="1" 
+            role="button">
+          </amp-img>
+        </li>
+      </ul>
+      <ul hidden [hidden]="product.selectedColor != 'golden'">
+        <li>
+          <amp-img 
+            on="tap:AMP.setState({product: {selectedSlideForGolden: 0}})" 
+            [src]="product[product.selectedColor].details.img"
+            width="60" 
+            height="40"
+            class="selected fadeIn" 
+            [class]="product.selectedSlideForGolden == 0 ? 'selected fadeIn' : '' " 
+            tabindex="0" 
+            role="button">
+          </amp-img>
+        </li>
+      </ul>
+      <ul hidden [hidden]="product.selectedColor != 'red'">
+        <li>
+          <amp-img 
+            on="tap:AMP.setState({ product: {selectedSlideForRed : 0}})" 
+            [src]="product[product.selectedColor].details.img" 
+            width="60" 
+            height="40"
+            class="selected fadeIn" 
+            [class]="product.selectedSlideForRed == 0 ? 'selected fadeIn' : '' " 
+            tabindex="0" 
+            role="button">
+          </amp-img>
+        </li>
+        <li>
+          <amp-img on="tap:AMP.setState({ product: {selectedSlideForRed : 1}})" [src]="product[product.selectedColor].details.img" width="60" height="40"
+            [class]="product.selectedSlideForRed == 1 ? 'selected' : '' " tabindex="1" role="button">
+          </amp-img>
+        </li>
+      </ul>
+    </div>
+    <div class="product-gallery">
+      <amp-carousel 
+        id="green-apple-carousel" 
+        width="1024" 
+        height="682" 
+        layout="responsive" 
+        type="slides" 
+        [slide]="product.selectedSlideForGreen"
+        on="slideChange: AMP.setState({product: {selectedSlideForGreen: event.index}})" class="fadeIn" [hidden]="product.selectedColor != 'green'">
+        
+        <amp-img 
+          [src]="product[product.selectedColor].details.img" 
+          width="1024" 
+          height="682" 
+          layout="responsive" 
+          on="tap:gallery-lightbox" 
+          role="button"
+          tabindex="0">
+        </amp-img>
+        <amp-img [src]="product[product.selectedColor].details.img" width="1024" height="682" layout="responsive" on="tap:gallery-lightbox" role="button"
+          tabindex="0">
+        </amp-img>
+        <amp-img [src]="product[product.selectedColor].details.img" width="1024" height="682" layout="responsive" on="tap:gallery-lightbox" role="button" tabindex="0">
+        </amp-img>
+        <amp-img [src]="product[product.selectedColor].details.img" width="1024" height="682" layout="responsive" on="tap:gallery-lightbox" role="button" tabindex="0">
+        </amp-img>
+      </amp-carousel>
+
+      <amp-carousel id="golden-apple-carousel" width="1024" height="682" layout="responsive" type="slides" [slide]="product.selectedSlideForGolden"
+        on="slideChange: AMP.setState({product: {selectedSlideForGolden: event.index}})" hidden class="fadeIn" [hidden]="product.selectedColor != 'golden'">
+        <amp-img [src]="product[product.selectedColor].details.img" width="1024" height="682" layout="responsive" on="tap:gallery-lightbox" role="button"
+          tabindex="0">
+        </amp-img>
+      </amp-carousel>
+
+      <amp-carousel id="red-apple-carousel" width="1024" height="682" layout="responsive" type="slides" [slide]="product.selectedSlideForRed"
+        on="slideChange: AMP.setState({product: {selectedSlideForRed: event.index}})" hidden class="fadeIn" [hidden]="product.selectedColor != 'red'">
+        <amp-img [src]="product[product.selectedColor].details.img" width="1024" height="682" layout="responsive" on="tap:gallery-lightbox" role="button"
+          tabindex="0">
+        </amp-img>
+        <amp-img [src]="product[product.selectedColor].details.img" width="1024" height="682" layout="responsive" on="tap:gallery-lightbox" role="button"
+          tabindex="0">
+        </amp-img>
+      </amp-carousel>
+
+      <amp-image-lightbox id="gallery-lightbox" layout="nodisplay">
+        <div on="tap:gallery-lightbox.close" role="button" tabindex="0">
+          <button class="ampstart-btn caps m2 close-gallery-button" on="tap:gallery-lightbox.close" role="button" tabindex="0">
+            Close
+          </button>
+        </div>
+      </amp-image-lightbox>
+    </div>
+  
+    <div class="product-container">
+    <amp-state id="product">
+      <script type="application/json">
+      {
+        "selectedColor": "green",
+        "selectedDetails": "details",
+        "selectedSlideForRed": 0,
+        "selectedSlideForGolden": 0,
+        "selectedSlideForGreen": 0,
+        "moreItemsPageIndex": 0,
+        "hasMorePages": true,
+        "green": {
+          "details": {
+            "info": "this is a string",
+            "price": "$143.99",
+            "img": "green_cover.jpg"
+          }
+        },
+        "golden": {
+          "details": {
+            "info": "this is a string",
+            "price": "$25.99",
+            "img": "golden_cover.jpg"
+          }
+        },
+        "red": {
+          "details": {
+            "info": "this is a string",
+            "price": "unavailable",
+            "img": "red_cover.jpg"
+          }
+        }
+      }
+      </script>
+      <!-- for the JSON file it's possible to setup a default value: "defaultSize": "M" -->
+    </amp-state>
+
+    <p class="price-description">Price:
+      <span [text]="product[product.selectedColor].details.price">$5.99</span>
+    </p>
+  
+    <form id="order" method="POST" action-xhr="" target="_top" class="flex flex-wrap m1">
+      <div class="items-center flex">
+        <label for="color">Choose the Color:</label>
+            <amp-selector 
+              name="color"
+                layout="container"
+                [selected]="product.selectedColor"
+                on="select:AMP.setState({
+                  product: {
+                    selectedColor: event.targetOption,
+                    selectedSlideForRed: 0,
+                    selectedSlideForGreen: 0,
+                    selectedSlideForYellow: 0,
+                    selectedDetails: product[event.targetOption].details[product.selectedDetails] != 'unavailable' ? product.selectedDetails : product[event.targetOption]
+                  }
+                })">
+              <ul class="p0 m1">
+                <li>
+                  <div option="green" selected class="square green"></div>
+                </li>
+                <li>
+                  <div option="golden" class="square golden"></div>
+                </li>
+                <li>
+                  <div option="red" class="square red"></div>
+                </li>
+              </ul>
+            </amp-selector>
+        <label for="quantity">Select the Quantity:</label>
+        <amp-selector name="quantity" layout="container">
+          <ul class="p0 m1">
+            <li option="1" selected>1</li>
+            <li option="2">2</li>
+            <li option="3">3</li>
+          </ul>
+        </amp-selector>
+      </div>
+      
+      <div class="items-center flex my1">
+        <input 
+          type="submit" 
+          class="basket-btn ampstart-btn caps" 
+          name="add-to-cart" 
+          value="Add to Basket">
+      </div>
+      <input 
+        type="hidden" 
+        name="name" 
+        value="Apple">
+      <input 
+        type="hidden" 
+        name="price" 
+        value="$1.99">
+      <input 
+        name="clientId" 
+        type="hidden" 
+        value="CLIENT_ID(cart)" 
+        data-amp-replace="CLIENT_ID">
+      <div submit-error>
+        <template type="amp-mustache">
+          Error! Looks like something went wrong with your shopping cart, please try to add an item again. {{error}}
+        </template>
+      </div>
+    </form>
+    </div>
+  </div>
+
+  <div class="section-3">
+    <div class="container-description-and-social">
+      <div class="description">
+        <amp-selector 
+          role="tablist" 
+          layout="container" 
+          class="ampTabContainer ampstart-headerbar-nav" 
+          keyboard-select-mode="select">
+          
+          <div 
+            role="tab" 
+            class="tabButton h4 ampstart-nav-item" 
+            selected option="a">ABOUT
+          </div>
+          <div 
+            role="tabpanel" 
+            class="tabContent p1 p">Fruit is rich in vitamins and minerals. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+            <div 
+              role="tab" 
+              class="tabButton h4 ampstart-nav-item" 
+              option="b">SPECS
+            </div>
+            <div 
+              role="tabpanel" 
+              class="tabContent p1 p">Always wash fruit before eating. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+            <div 
+              role="tab" 
+              class="tabButton h4 ampstart-nav-item" 
+              option="c">DETAILS
+            </div>
+            <div 
+              role="tabpanel" 
+              class="tabContent p1 p">Detail may vary. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+              non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+          </amp-selector>
+        </div>
+      
+      <div class="m1 social-icons social-icons-desktop">
+        <amp-social-share 
+          type="twitter" 
+          width="30" 
+          height="30">
+        </amp-social-share>
+      
+        <amp-social-share 
+          type="facebook" 
+          width="30" 
+          height="30" 
+          data-attribution="254325784911610">
+        </amp-social-share>
+      
+        <amp-social-share 
+          type="gplus" 
+          width="30" 
+          height="30">
+        </amp-social-share>
+      
+        <amp-social-share 
+          type="email" 
+          width="30" 
+          height="30">
+        </amp-social-share>
+      
+        <amp-social-share 
+          type="pinterest" 
+          width="33" 
+          height="30">
+        </amp-social-share>
+      </div>
+    </div>
+  </div>
+  <div class="section-4 dna-ads">
+    <amp-youtube 
+      data-videoid="Ib1hSvoJMJA" 
+      poster="dna-poster.jpeg"
+      layout="responsive" 
+      width="480" 
+      height="270">
+    </amp-youtube>
+  </div>
+  <div class="m1 social-icons social-icons-mobile">
+    <amp-social-share type="twitter" width="30" height="30">
+    </amp-social-share>
+  
+    <amp-social-share type="facebook" width="30" height="30" data-attribution="254325784911610">
+    </amp-social-share>
+  
+    <amp-social-share type="gplus" width="30" height="30">
+    </amp-social-share>
+  
+    <amp-social-share type="email" width="30" height="30">
+    </amp-social-share>
+  
+    <amp-social-share type="pinterest" width="33" height="30">
+    </amp-social-share>
+  </div>
+  </div>
+  </div>
+
+  
+  <div class="footer">
+    <p class="copyright">DNA 2018 Copyright</p>
+  </div>
+  <!-- <div class="items-center flex">
+    <h2 id="related-products" class="m1 inline-block">Related products
+      <amp-lightbox id="my-lightbox" layout="nodisplay">
+        <div class="lightbox" on="tap:my-lightbox.close" role="button" tabindex="0">
+          <div class="info">
+            <h4 class="p2">Products that have been bought together</h4>
+            <button class="ampstart-btn caps mx2 mb2" on="tap:my-lightbox.close" role="button" tabindex="0">
+              Close
+            </button>
+          </div>
+        </div>
+      </amp-lightbox>
+    </h2>
+    <button class="info-button border-none mr1" on="tap:my-lightbox" role="button" tabindex="0">
+    </button>
+  </div> -->
+
+  <!-- <amp-list class="items m1" width="auto" height="145" layout="fixed-height" src="/json/related_products.json" [src]="myState.items"
+    id="show-more-list">
+    <template type="amp-mustache">
+      <a class="text-decoration-none p1" href="/samples_templates/product_page/preview/">
+        <amp-img width="70.31" height="46.8" layout="fixed" alt="{{name}}" src="{{img}}"></amp-img>
+        <p class="name">{{name}}</p>
+        <p class="star">{{{stars}}}</p>
+        <p class="price">${{price}}</p>
+      </a>
+    </template>
+  </amp-list> -->
+
+  <!-- <amp-state id="myState" src="/json/related_products.json">
+  </amp-state>
+
+  <form method="GET" action="/json/more_related_products_page" action-xhr="/json/more_related_products_page" target="_top"
+    on="submit-success: AMP.setState({
+      myState: { items: myState.items.concat(event.response.items)},
+      product: {moreItemsPageIndex: product.moreItemsPageIndex + 1,
+      hasMorePages: event.response.hasMorePages}
+    });">
+    <input type="hidden" name="moreItemsPageIndex" value="0" [value]="product.moreItemsPageIndex">
+    <input type="submit" value="Show more" class="ampstart-btn caps m1 mb3" [hidden]="!product.hasMorePages">
+  </form> -->
+
+  <amp-analytics type="googleanalytics">
+    <script type="application/json">
+      {
+      "vars": {
+        "account": "UA-73836974-1"
+      },
+      "triggers": {
+        "default pageview": {
+          "on": "visible",
+          "request": "pageview",
+          "vars": {
+            "title": "Product"
+          }
+        }
+      }
+    }
+    </script>
+  </amp-analytics>
+</body>
+</html>

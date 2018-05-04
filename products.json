@@ -1,0 +1,30 @@
+{
+    "selectedColor": "green",
+    "selectedDetails": "price",
+    "selectedSlideForRed": 0,
+    "selectedSlideForGolden": 0,
+    "selectedSlideForGreen": 0,
+    "moreItemsPageIndex": 0,
+    "hasMorePages": true,
+    "green": {
+        "details": {
+            "info": "this is a string",
+            "price": "$143.99",
+            "img": "green_cover.jpg"
+        }
+    },
+    "golden": {
+        "details": {
+            "info": "this is a string",
+            "price": "$25.99",
+            "img": "golden_cover.jpg"
+        }
+    },
+    "red": {
+        "details": {
+            "info": "this is a string",
+            "price": "unavailable",
+            "img": "red_cover.jpg"
+        }
+    }
+}
